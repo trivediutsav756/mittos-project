@@ -8,6 +8,15 @@ import { mittosComparison } from '../data/comparisonData';
 import RevenueSection from '../components/RevenueSection';
 import WhatsAppBulkMessages from '../components/WhatsAppBulkMessages';
 import WhatsAppChatbotBuilder from '../components/WhatsAppChatbotBuilder';
+import WhatsAppForms from '../components/WhatsAppForms';
+import DripCampaignSection from '../components/DripCampaignSection';
+import CtwaSection from '../components/CtwaSection';
+
+import AutomationSection from '../components/AutomationSection';
+import PabblyComparisonSection from '../components/PabblyComparisonSection';
+import SalesDashboard from '../components/SalesDashboard';
+import LeadSources from '../components/LeadSources';
+
 
 
 const Home = () => {
@@ -26,6 +35,15 @@ const Home = () => {
       <RevenueSection />
       <WhatsAppBulkMessages />;
       <WhatsAppChatbotBuilder/>;
+      <WhatsAppForms/>;
+      <DripCampaignSection />
+      <CtwaSection />
+     <SalesDashboard /> 
+     <LeadSources /> 
+      <AutomationSection />
+      <PabblyComparisonSection />
+      
+      
     </main>
   );
 };
