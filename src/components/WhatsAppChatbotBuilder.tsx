@@ -13,7 +13,7 @@ const WhatsAppChatbotBuilder: React.FC = () => {
 
   return (
     <motion.div
-      className="w-full min-h-[400px] bg-green-50 flex flex-col justify-center items-center px-6 py-14"
+      className="w-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] bg-green-50 flex flex-col justify-center items-center px-3 sm:px-4 md:px-6 py-8 sm:py-10 md:py-14"
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -21,7 +21,7 @@ const WhatsAppChatbotBuilder: React.FC = () => {
     >
       {/* Heading */}
       <motion.h1
-        className="w-full text-3xl md:text-5xl font-extrabold text-center text-green-900 mb-8"
+        className="w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-center text-green-900 mb-4 sm:mb-6 md:mb-8"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -33,7 +33,7 @@ const WhatsAppChatbotBuilder: React.FC = () => {
 
       {/* Points */}
       <motion.ul
-        className="list-disc list-inside space-y-4 text-lg text-gray-800 w-full max-w-screen-xl mb-8"
+        className="list-disc list-inside space-y-2 sm:space-y-3 md:space-y-4 text-sm sm:text-base md:text-lg text-gray-800 w-full max-w-screen-xl mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
@@ -71,12 +71,12 @@ const WhatsAppChatbotBuilder: React.FC = () => {
       </motion.ul>
 
       {/* Buttons */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full max-w-screen-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 w-full max-w-screen-xl px-2 sm:px-4">
         {buttons.map((btn, i) => (
           <motion.button
             key={i}
-            className="flex justify-center items-center gap-2 py-4 border border-green-300 rounded-lg text-green-800 font-medium shadow-md bg-white
-                       transform transition-all duration-300 w-full
+            className="flex justify-center items-center gap-1 sm:gap-2 py-2 sm:py-3 md:py-4 border border-green-300 rounded-lg text-green-800 font-medium shadow-md bg-white
+                       transform transition-all duration-300 w-full text-xs sm:text-sm md:text-base
                        hover:bg-[#22C55E] hover:text-white hover:scale-[1.03] hover:shadow-[0_0_10px_#22C55E]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,8 +92,8 @@ const WhatsAppChatbotBuilder: React.FC = () => {
               transition: { duration: 0.15 },
             }}
           >
-            {btn.icon}
-            {btn.label}
+            <span className="text-xs sm:text-sm md:text-base">{btn.icon}</span>
+            <span>{btn.label}</span>
           </motion.button>
         ))}
       </div>

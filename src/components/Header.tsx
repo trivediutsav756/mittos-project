@@ -21,7 +21,7 @@ const Header = () => {
       <motion.div 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-4 text-center  font-bold text-medium"
+        className="bg-gradient-to-r from-green-500 to-green-600 text-white py-1.5 sm:py-2 px-3 sm:px-4 text-center font-bold text-xs sm:text-sm md:text-medium"
       >
         WhatsApp Official API – Broadcast Messages, Automate, Engage, & Close Deals Faster! [Try It Now]
       </motion.div>
@@ -33,8 +33,8 @@ const Header = () => {
         transition={{ delay: 0.2 }}
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-20 md:h-24">
             {/* Logo */}
             <motion.div 
               whileHover={{ scale: 1.05 }}
@@ -43,14 +43,14 @@ const Header = () => {
               {/* <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-white" />
               </div> */}
-              <span className="h-12 w-full font-bold bg-red-500">
+              <span className="h-8 sm:h-10 md:h-12 w-full font-bold bg-red-500">
                 {/* Mittos <span className="text-green-500 text-3xl">API</span> */}
                 <img src={logo} alt="" className='h-full w-full object-contain' />
               </span>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-4">
+            <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item}
@@ -59,7 +59,7 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.1 }}
                   whileHover={{ y: -2 }}
-                  className="text-gray-700 hover:text-green-500 font-medium text-sm transition-colors duration-200"
+                  className="text-gray-700 hover:text-green-500 font-medium text-xs xl:text-sm transition-colors duration-200 px-1 xl:px-2"
                 >
                   {item}
                 </motion.a>
@@ -67,18 +67,18 @@ const Header = () => {
             </nav>
 
             {/* Desktop Buttons */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                className="bg-green-500 hover:bg-green-600 text-white px-4 xl:px-6 py-1.5 xl:py-2 rounded-lg font-medium transition-colors duration-200 text-xs xl:text-sm"
               >
                 START NOW →
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-gray-300 hover:border-green-500 text-gray-700 hover:text-green-500 px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                className="border border-gray-300 hover:border-green-500 text-gray-700 hover:text-green-500 px-4 xl:px-6 py-1.5 xl:py-2 rounded-lg font-medium transition-colors duration-200 text-xs xl:text-sm"
               >
                 LOGIN →
               </motion.button>
@@ -104,7 +104,7 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }}
               className="lg:hidden bg-white border-t border-gray-100"
             >
-              <div className="px-4 py-4 space-y-4">
+              <div className="px-3 sm:px-4 py-3 sm:py-4 space-y-3 sm:space-y-4">
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item}
@@ -112,17 +112,17 @@ const Header = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block text-gray-700 hover:text-green-500 font-medium py-2 border-b border-gray-50 last:border-b-0"
+                    className="block text-gray-700 hover:text-green-500 font-medium py-1.5 sm:py-2 border-b border-gray-50 last:border-b-0 text-sm"
                   >
                     {item}
                   </motion.a>
                 ))}
-                <div className="pt-4 space-y-3">
+                <div className="pt-3 sm:pt-4 space-y-2 sm:space-y-3">
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-sm"
                   >
                     START NOW →
                   </motion.button>
@@ -130,7 +130,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 }}
-                    className="w-full border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium"
+                    className="w-full border border-gray-300 text-gray-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-sm"
                   >
                     LOGIN →
                   </motion.button>

@@ -45,38 +45,38 @@ const DripCampaignSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex gap-10 p-8 bg-green-50 rounded-2xl">
+    <section className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-10 p-4 sm:p-6 md:p-8 bg-green-50 rounded-xl sm:rounded-2xl">
       {/* Sidebar steps */}
-      <ul className="space-y-4">
+      <ul className="space-y-2 sm:space-y-3 md:space-y-4 flex-shrink-0">
         {steps.map((step, i) => (
           <li
             key={i}
             onClick={() => handleStepClick(i)}
-            className={`w-fit cursor-pointer px-5 py-3 rounded-full flex items-center gap-3 shadow-sm ${
+            className={`w-fit cursor-pointer px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-full flex items-center gap-2 md:gap-3 shadow-sm ${
               i === activeIndex
                 ? "bg-white shadow-md"
                 : "bg-[#d6f5db] hover:bg-[#c8eecd]"
             }`}
           >
-            <FaWhatsapp className="text-green-600 text-lg" />
-            <span className="text-sm whitespace-nowrap">{step.label}</span>
+            <FaWhatsapp className="text-green-600 text-base sm:text-lg" />
+            <span className="text-xs sm:text-sm whitespace-nowrap">{step.label}</span>
           </li>
         ))}
       </ul>
 
-      <div className="flex flex-col md:flex-row gap-10">
+      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 mt-4 md:mt-0">
         {/* Phone/Mobile Screen */}
         {activeIndex === steps.length - 1 ? (
-          <div className="flex items-center">
-            <div className="bg-[#e2f7cb] rounded-3xl p-4 max-w-[260px] flex items-center gap-3">
-              <FaWhatsapp className="text-green-600 text-2xl" />
-              <span className="text-base">
+          <div className="flex items-center justify-center md:justify-start">
+            <div className="bg-[#e2f7cb] rounded-2xl sm:rounded-3xl p-3 sm:p-4 max-w-[220px] sm:max-w-[240px] md:max-w-[260px] flex items-center gap-2 sm:gap-3">
+              <FaWhatsapp className="text-green-600 text-xl sm:text-2xl" />
+              <span className="text-sm sm:text-base">
                 Keep adding as many steps you need
               </span>
             </div>
           </div>
         ) : (
-          <div className="w-[260px] h-[520px] rounded-3xl overflow-hidden bg-black">
+          <div className="w-full max-w-[220px] sm:max-w-[240px] md:max-w-[260px] h-[440px] sm:h-[480px] md:h-[520px] rounded-2xl sm:rounded-3xl overflow-hidden bg-black mx-auto md:mx-0">
             <img
               src={steps[activeIndex].src}
               alt="phone sequence"
@@ -86,62 +86,62 @@ const DripCampaignSection: React.FC = () => {
         )}
 
         {/* Info / Description */}
-        <div className="flex flex-col max-w-md">
-          <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
+        <div className="flex flex-col max-w-full md:max-w-md">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 text-center md:text-left">
             Sequence or Drip Campaign
           </h2>
 
-          <p className="text-gray-700 mb-6 text-center md:text-left">
+          <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-5 md:mb-6 text-center md:text-left">
             Automate marketing strategy that sends a series of pre-scheduled,
             targeted messages to nurture leads or engage customers over time.
           </p>
 
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Consistent Engagement</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Consistent Engagement</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Better Customer Retention</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Better Customer Retention</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Higher Conversion Rates</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Higher Conversion Rates</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Scalable for Large Audiences</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Scalable for Large Audiences</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Automated Lead Nurturing</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Automated Lead Nurturing</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="inline-block w-1 h-1 bg-black rounded-full"></span>
-              <div className="flex items-center gap-2">
-                <FaWhatsapp className="text-gray-700" />
-                <span className="text-gray-700">Re-engage Old Leads</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <FaWhatsapp className="text-gray-700 text-sm sm:text-base" />
+                <span className="text-gray-700 text-xs sm:text-sm md:text-base">Re-engage Old Leads</span>
               </div>
             </div>
           </div>

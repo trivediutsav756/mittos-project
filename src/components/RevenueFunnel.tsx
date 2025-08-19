@@ -25,7 +25,7 @@ interface FunnelStepProps {
 const FunnelStep: React.FC<FunnelStepProps> = ({ children, className }) => (
   <motion.div
     variants={fadeIn}
-    className={`bg-[#1a1a2e] border border-purple-700 rounded-lg p-4 text-center z-10 w-64 ${className}`}
+    className={`bg-[#1a1a2e] border border-purple-700 rounded-lg p-2 xs:p-3 sm:p-4 text-center z-10 w-full xs:w-56 sm:w-60 md:w-64 ${className}`}
   >
     {children}
   </motion.div>
@@ -33,7 +33,7 @@ const FunnelStep: React.FC<FunnelStepProps> = ({ children, className }) => (
 
 // A simple vertical connector for mobile fallback
 const SimpleConnector: React.FC = () => (
-    <div className="w-px h-12 bg-purple-500 mx-auto" />
+    <div className="w-px h-8 xs:h-10 sm:h-12 bg-purple-500 mx-auto" />
 );
 
 // --- Main Component ---
@@ -51,7 +51,7 @@ const RevenueFunnel: React.FC = () => {
   const nurtureDays: string[] = ["Day 01", "Day 03", "Day 05", "Day 07"];
 
   return (
-    <div className="bg-black text-white min-h-screen font-sans flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 overflow-x-hidden">
+    <div className="bg-black text-white min-h-screen font-sans flex flex-col items-center justify-center p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 overflow-x-hidden">
       {/* Title */}
       <motion.div
         initial="hidden"
@@ -59,10 +59,10 @@ const RevenueFunnel: React.FC = () => {
         variants={fadeIn}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold">
           <span className="text-green-400">5X YOUR REVENUE</span>
         </h1>
-        <p className="text-lg md:text-xl mt-2">with the Power of AI & WhatsApp</p>
+        <p className="text-base xs:text-lg md:text-xl mt-1 sm:mt-2">with the Power of AI & WhatsApp</p>
       </motion.div>
       
       {/* Main Funnel Container - This needs to be relative to position all the lines */}
@@ -77,8 +77,8 @@ const RevenueFunnel: React.FC = () => {
                 className="flex flex-wrap justify-around gap-4"
             >
                 {socialIcons.map(({ icon: Icon, key }, index) => (
-                    <motion.div key={key} variants={fadeIn} className="p-3 bg-gray-800 rounded-full cursor-pointer hover:bg-purple-600 transition-colors z-10">
-                        <Icon size={32} />
+                    <motion.div key={key} variants={fadeIn} className="p-2 xs:p-2.5 sm:p-3 bg-gray-800 rounded-full cursor-pointer hover:bg-purple-600 transition-colors z-10">
+                        <Icon size={20} className="xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                     </motion.div>
                 ))}
             </motion.div>
@@ -117,10 +117,10 @@ const RevenueFunnel: React.FC = () => {
 
         <motion.div
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
+          className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 xs:gap-3 sm:gap-4"
         >
           {automationSteps.map((step) => (
-            <FunnelStep key={step} className="bg-[#2c2c54] text-sm md:text-base !w-full">{step}</FunnelStep>
+            <FunnelStep key={step} className="bg-[#2c2c54] text-xs xs:text-sm md:text-base !w-full">{step}</FunnelStep>
           ))}
         </motion.div>
 
@@ -157,10 +157,10 @@ const RevenueFunnel: React.FC = () => {
 
         <motion.div
           variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-          className="flex justify-around gap-4 w-full max-w-2xl"
+          className="flex justify-around gap-2 xs:gap-3 sm:gap-4 w-full max-w-2xl"
         >
           {nurtureDays.map((day) => (
-            <motion.div key={day} variants={fadeIn} className="bg-gray-700 px-4 py-1 rounded-full text-sm z-10">{day}</motion.div>
+            <motion.div key={day} variants={fadeIn} className="bg-gray-700 px-2 xs:px-3 sm:px-4 py-1 rounded-full text-xs xs:text-sm z-10">{day}</motion.div>
           ))}
         </motion.div>
 
@@ -178,7 +178,7 @@ const RevenueFunnel: React.FC = () => {
         </div>
         
         {/* --- Bottom branching section with lines --- */}
-        <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-16 relative">
           <div className="hidden md:block absolute -top-4 left-0 w-full h-px">
             <div className="w-1/2 h-full bg-purple-500 float-left border-r-[160px] border-transparent"></div>
             <div className="w-1/2 h-full bg-purple-500 float-right border-l-[160px] border-transparent"></div>
@@ -190,14 +190,14 @@ const RevenueFunnel: React.FC = () => {
           <motion.div variants={fadeIn} className="flex flex-col items-center gap-y-4">
             <FunnelStep className="bg-green-600/40 border-green-500 w-full">Positive</FunnelStep>
             <SimpleConnector />
-            <div className="bg-green-500 text-black font-bold rounded-lg p-3 w-full text-center">Lead Won</div>
+            <div className="bg-green-500 text-black font-bold rounded-lg p-2 sm:p-3 w-full text-center text-xs xs:text-sm md:text-base">Lead Won</div>
           </motion.div>
 
           {/* Negative Branch */}
           <motion.div variants={fadeIn} className="flex flex-col items-center gap-y-4">
             <FunnelStep className="bg-red-600/40 border-red-500 w-full">Negative</FunnelStep>
             <SimpleConnector />
-            <div className="bg-red-500 text-white font-bold rounded-lg p-3 w-full text-center">Long Nurture</div>
+            <div className="bg-red-500 text-white font-bold rounded-lg p-2 sm:p-3 w-full text-center text-xs xs:text-sm md:text-base">Long Nurture</div>
           </motion.div>
         </div>
       </div>

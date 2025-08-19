@@ -40,20 +40,20 @@ import { BsWhatsapp } from "react-icons/bs"
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-12 max-w-5xl">
+      <div className="relative z-10 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 py-6 xs:py-8 sm:py-10 md:py-12 lg:py-16 max-w-5xl">
         {/* Header Section */}
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-1 xs:mb-2 sm:mb-3 md:mb-4">
             <span className="text-green-400">5X</span> YOUR REVENUE
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8">
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-300 mb-3 xs:mb-4 sm:mb-6 md:mb-8 lg:mb-10">
             with the Power of <span className="text-green-400">AI</span> &{" "}
             <span className="text-green-400">WhatsApp</span>
           </p>
 
           {/* Social Media Icons with Pipelines */}
           <div className="relative">
-            <div className="flex justify-center gap-6 md:gap-8 md:mb-16 mb-12">
+            <div className="flex justify-center gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               {[
                 {
                   icon: Facebook,
@@ -93,15 +93,15 @@ import { BsWhatsapp } from "react-icons/bs"
               ].map((social, index) => (
                 <div key={index} className="relative">
                   <div
-                    className={`w-8 h-8 md:w-16 md:h-16 rounded-full ${social.bgColor} border-2 ${social.borderColor} flex items-center justify-center hover:scale-110 transition-all duration-300 ${social.color} shadow-xl relative z-10`}
+                    className={`w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-16 xl:h-16 rounded-full ${social.bgColor} border-[1.5px] xs:border-2 ${social.borderColor} flex items-center justify-center hover:scale-110 transition-all duration-300 ${social.color} shadow-xl relative z-10`}
                   >
-                    <social.icon className="w-4 h-4 md:w-8 md:h-8" />
+                    <social.icon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8" />
                   </div>
 
                   {/* Individual Pipeline from each icon */}
-                  <div className="absolute  md:top-16  left-1/2 transform -translate-x-1/2">
+                  <div className="absolute top-5 xs:top-6 sm:top-8 md:top-10 lg:top-12 xl:top-16 left-1/2 transform -translate-x-1/2">
                     <div
-                      className={`md:w-[5px] w-[3px] md:h-16 h-12 bg-gradient-to-b ${social.pipeColor} rounded-full relative overflow-hidden shadow-lg`}
+                      className={`w-[1.5px] xs:w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-6 xs:h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-gradient-to-b ${social.pipeColor} rounded-full relative overflow-hidden shadow-lg`}
                     >
                       <div
                         className="absolute w-full h-6 bg-gradient-to-b from-transparent via-white/60 to-transparent rounded-full"
@@ -130,7 +130,7 @@ import { BsWhatsapp } from "react-icons/bs"
               </div>
             </div> */}
             <div className="flex justify-center">
-  <div className="md:w-96 w-56 md:h-[5px] h-[3px] bg-gradient-to-r from-transparent via-gray-400 to-transparent rounded-full relative overflow-hidden shadow-lg">
+  <div className="w-36 xs:w-48 sm:w-64 md:w-80 lg:w-96 h-[1.5px] xs:h-[2px] sm:h-[3px] md:h-[4px] lg:h-[5px] bg-gradient-to-r from-transparent via-gray-400 to-transparent rounded-full relative overflow-hidden shadow-lg">
 
     {/* Left to Center */}
     <div
@@ -154,7 +154,7 @@ import { BsWhatsapp } from "react-icons/bs"
 
             {/* Pipeline to Lead Capture */}
             <div className="flex justify-center ">
-              <div className="md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-gray-400 via-purple-500 to-purple-600 rounded-full relative overflow-hidden shadow-lg">
+              <div className="w-[1.5px] xs:w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-6 xs:h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-gray-400 via-purple-500 to-purple-600 rounded-full relative overflow-hidden shadow-lg">
                 <div
                   className="absolute w-full h-8 bg-gradient-to-b from-transparent via-white/50 to-transparent rounded-full"
                   style={{ animation: `flowDown 1.8s infinite linear` }}
@@ -176,7 +176,7 @@ import { BsWhatsapp } from "react-icons/bs"
               </div>
             </div> */}
             <div className="flex justify-center relative">
-  <div className="relative md:w-96 md:h-20 h-16 w-56 bg-gradient-to-r from-purple-600 to-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
+  <div className="relative w-36 xs:w-48 sm:w-56 md:w-72 lg:w-80 xl:w-96 h-10 xs:h-12 sm:h-14 md:h-16 lg:h-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
     style={{
       clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%)',
       border: animationStep >= 0 ? '2px solid rgba(192,132,252,0.5)' : '2px solid transparent',
@@ -184,7 +184,7 @@ import { BsWhatsapp } from "react-icons/bs"
       boxShadow: animationStep >= 0 ? '0 0 30px rgba(192,132,252,0.5)' : '0 0 15px rgba(192,132,252,0.25)',
     }}
   >
-    <span className="font-bold md:text-xl text-base relative z-10">Lead Capture</span>
+    <span className="font-bold text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl relative z-10">Lead Capture</span>
 
     {/* Optional Glow Ping Dot */}
     {/* <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50 animate-ping z-0" /> */}
@@ -196,7 +196,7 @@ import { BsWhatsapp } from "react-icons/bs"
 
         {/* Pipeline to Workflow Automation */}
         <div className="flex justify-center">
-          <div className="md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-purple-500 via-blue-500 to-cyan-500 rounded-full relative overflow-hidden shadow-lg">
+          <div className="w-[1.5px] xs:w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-6 xs:h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-purple-500 via-blue-500 to-cyan-500 rounded-full relative overflow-hidden shadow-lg">
             <div
               className={`absolute w-full h-8 bg-gradient-to-b from-transparent via-white/60 to-transparent rounded-full transition-opacity duration-500 ${
                 animationStep >= 1 ? "opacity-100" : "opacity-30"
@@ -221,7 +221,7 @@ import { BsWhatsapp } from "react-icons/bs"
           </div>
         </div> */}
             <div className="flex justify-center relative">
-  <div className="relative md:w-64 md:h-20 h-16 w-44 bg-gradient-to-r from-blue-600 to-cyan-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
+  <div className="relative w-32 xs:w-36 sm:w-44 md:w-52 lg:w-60 xl:w-64 h-10 xs:h-12 sm:h-14 md:h-16 lg:h-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
     style={{
       clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%)',
       border: animationStep >= 0 ? '2px solid rgba(192,132,252,0.5)' : '2px solid transparent',
@@ -229,7 +229,7 @@ import { BsWhatsapp } from "react-icons/bs"
       boxShadow: animationStep >= 0 ? '0 0 30px rgba(192,132,252,0.5)' : '0 0 15px rgba(192,132,252,0.25)',
     }}
   >
-    <span className="font-bold md:text-[16px] text-[11px] relative z-10 ">Mittos API Automation </span> <span className="ml-1 bg-white"><img src={image} alt="" className="w-3 md:w-5" /></span>
+    <span className="font-bold text-[8px] xs:text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] relative z-10">Mittos API Automation </span> <span className="ml-0.5 xs:ml-1 bg-white"><img src={image} alt="" className="w-1.5 xs:w-2 sm:w-3 md:w-4 lg:w-5" /></span>
 
     {/* Optional Glow Ping Dot */}
     {/* <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50 animate-ping z-0" /> */}
@@ -237,10 +237,10 @@ import { BsWhatsapp } from "react-icons/bs"
 </div>
 
         {/* Distribution Pipeline System */}
-        <div className="flex justify-center md:mb-14 mb-4">
-          <div className="relative w-[82%] md:h-20 h-20">
+        <div className="flex justify-center mb-3 xs:mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-14">
+          <div className="relative w-[70%] xs:w-[75%] sm:w-[78%] md:w-[80%] lg:w-[82%] h-10 xs:h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16">
             {/* Main vertical pipe */}
-            <div className="absolute top-0 left-1/2  md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-cyan-500 to-green-500 transform -translate-x-1/2 rounded-full shadow-lg">
+            <div className="absolute top-0 left-1/2 w-[1.5px] xs:w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-6 xs:h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-cyan-500 to-green-500 transform -translate-x-1/2 rounded-full shadow-lg">
               <div
                 className={`absolute w-full h-4 bg-gradient-to-b from-transparent via-white/60 to-transparent rounded-full transition-opacity duration-500 ${
                   animationStep >= 2 ? "opacity-100" : "opacity-30"
@@ -261,7 +261,7 @@ import { BsWhatsapp } from "react-icons/bs"
                 style={{ animation: `flowRight 2s infinite linear`, animationDelay: "1.2s" }}
               />
             </div> */}
-   <div className="absolute md:top-16 top-12 left-0 right-0 md:h-[5px] h-[3px] bg-green-500 rounded-full shadow-lg overflow-hidden">
+   <div className="absolute top-6 xs:top-8 sm:top-10 md:top-12 lg:top-16 left-0 right-0 h-[1.5px] xs:h-[2px] sm:h-[3px] md:h-[4px] lg:h-[5px] bg-green-500 rounded-full shadow-lg overflow-hidden">
 
 {/* Right Flow */}
 <div
@@ -291,7 +291,7 @@ import { BsWhatsapp } from "react-icons/bs"
             {[0, 25, 50, 75, 100].map((position, index) => (
               <div
                 key={index}
-                className="absolute md:top-[70px] top-[50px]  md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-green-500 to-emerald-600 rounded-full shadow-lg"
+                className="absolute top-[25px] xs:top-[30px] sm:top-[40px] md:top-[50px] lg:top-[70px] w-[1.5px] xs:w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-6 xs:h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-green-500 to-emerald-600 rounded-full shadow-lg"
                 style={{ left: `${position}%` }}
               >
                 <div
@@ -306,7 +306,7 @@ import { BsWhatsapp } from "react-icons/bs"
         </div>
 
         {/* Services Row */}
-        <div className="grid grid-cols-5 md:grid-cols-5 md:gap-4 gap-2 md:mb-16 mb-12">
+        <div className="grid grid-cols-5 gap-1 xs:gap-2 sm:gap-3 md:gap-4 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16">
           {[
             { name: "AI Chat", icon: Bot, color: "from-blue-600 to-blue-700" },
             { name: "AI Calling", icon: Phone, color: "from-green-600 to-green-700" },
@@ -316,18 +316,18 @@ import { BsWhatsapp } from "react-icons/bs"
           ].map((service, index) => (
             <div key={index} className="relative">
               <div
-                className={`bg-gradient-to-r ${service.color} md:p-4 rounded-xl border-2 border-green-400/50 text-center hover:border-white transition-all duration-500 shadow-lg relative overflow-hidden ${
+                className={`bg-gradient-to-r ${service.color} p-1.5 xs:p-2 sm:p-3 md:p-4 rounded-sm xs:rounded-md sm:rounded-lg md:rounded-xl border border-green-400/50 xs:border-2 text-center hover:border-white transition-all duration-500 shadow-lg relative overflow-hidden ${
                   animationStep >= 2 ? "scale-105 border-white shadow-green-500/25" : ""
                 }`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-xl" />
-                <service.icon className="w-4 h-4 md:w-8 md:h-8 mx-auto md:mb-2 mt-2 md:mt-0 text-white relative z-10" />
-                <span className="text-[8px] md:text-sm font-bold relative z-10 ">{service.name}</span>
+                <service.icon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-8 xl:h-8 mx-auto mb-0.5 xs:mb-1 sm:mb-1.5 md:mb-2 mt-0.5 xs:mt-1 sm:mt-1.5 md:mt-0 text-white relative z-10" />
+                <span className="text-[5px] xs:text-[6px] sm:text-[8px] md:text-[10px] lg:text-xs xl:text-sm font-bold relative z-10">{service.name}</span>
               </div>
 
               {/* Output pipe from each service */}
-              <div className="absolute md:-bottom-16 left-1/2 transform -translate-x-1/2">
-                <div className=" md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-emerald-500 to-teal-600 rounded-full shadow-lg">
+              <div className="absolute -bottom-8 sm:-bottom-10 md:-bottom-12 lg:-bottom-16 left-1/2 transform -translate-x-1/2">
+                <div className="w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-emerald-500 to-teal-600 rounded-full shadow-lg">
                   <div
                     className={`absolute w-full h-4 bg-gradient-to-b from-transparent via-white/50 to-transparent rounded-full transition-opacity duration-500 ${
                       animationStep >= 3 ? "opacity-100" : "opacity-30"
@@ -352,7 +352,7 @@ import { BsWhatsapp } from "react-icons/bs"
           </div>
         </div> */}
         <div className="flex justify-center">
-  <div className="md:w-[82%] md:h-[5px] h-[3px] w-[82%] bg-teal-500 rounded-full relative overflow-hidden shadow-lg">
+  <div className="w-[82%] h-[2px] sm:h-[3px] md:h-[4px] lg:h-[5px] bg-teal-500 rounded-full relative overflow-hidden shadow-lg">
 
     {/* Left to Center */}
     <div
@@ -374,7 +374,7 @@ import { BsWhatsapp } from "react-icons/bs"
 
         {/* Pipeline to Auto Qualify */}
         <div className="flex justify-center ">
-          <div className=" md:w-[5px] md:h-16 w-[3px] h-12 bg-gradient-to-b from-teal-500 to-green-600 rounded-full relative overflow-hidden shadow-lg">
+          <div className="w-[2px] sm:w-[3px] md:w-[4px] lg:w-[5px] h-8 sm:h-10 md:h-12 lg:h-16 bg-gradient-to-b from-teal-500 to-green-600 rounded-full relative overflow-hidden shadow-lg">
             <div
               className={`absolute w-full h-6 bg-gradient-to-b from-transparent via-white/60 to-transparent rounded-full transition-opacity duration-500 ${
                 animationStep >= 4 ? "opacity-100" : "opacity-30"
@@ -396,7 +396,7 @@ import { BsWhatsapp } from "react-icons/bs"
           </div>
         </div> */}
               <div className="flex justify-center relative">
-  <div className="relative md:w-52 md:h-20 h-16 bg-gradient-to-r px-4 md:px-0 from-green-600 to-emerald-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
+  <div className="relative w-36 xs:w-40 sm:w-44 md:w-48 lg:w-52 h-12 sm:h-14 md:h-16 lg:h-20 bg-gradient-to-r px-2 xs:px-3 sm:px-4 md:px-0 from-green-600 to-emerald-600 text-white flex items-center justify-center shadow-xl transition-all duration-500"
     style={{
       clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%)',
       border: animationStep >= 0 ? '2px solid rgba(192,132,252,0.5)' : '2px solid transparent',

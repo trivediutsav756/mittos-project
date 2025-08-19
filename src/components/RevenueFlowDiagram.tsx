@@ -280,7 +280,7 @@ const RevenueFlowDiagram: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 p-4 md:p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 p-2 sm:p-3 md:p-6 lg:p-8 relative overflow-hidden">
       {/* CSS for flow animation */}
       <style jsx>{`
         @keyframes flow {
@@ -311,11 +311,11 @@ const RevenueFlowDiagram: React.FC = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
             <span className="text-green-400">5X</span> YOUR REVENUE
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300">
             with the Power of <span className="text-orange-400">AI</span> & <span className="text-green-400">WhatsApp</span>
           </p>
           <IconDiagram/>
@@ -342,11 +342,11 @@ const RevenueFlowDiagram: React.FC = () => {
           {/* Stage 1: Social Media Sources */}
           <div className="flex justify-center mb-4">
             <div className="relative bg-black/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-700">
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4">
                 {socialMediaData.map((social, index) => (
                   <div key={index} className="flex flex-col items-center p-1 pt-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors relative">
-                    <social.icon className={`w-8 h-8 ${social.color} mb-2`} />
-                    <span className="text-xs text-gray-300">{social.name}</span>
+                    <social.icon className={`w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${social.color} mb-1 sm:mb-2`} />
+                    <span className="text-[10px] xs:text-xs sm:text-sm text-gray-300">{social.name}</span>
                     {/* Individual connector lines from each source */}
                     {/* <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gray-500" /> */}
                   </div>
@@ -366,8 +366,8 @@ const RevenueFlowDiagram: React.FC = () => {
           {/* Stage 2: Lead Capture */}
           <div className="flex justify-center mb-4">
             <div className="bg-purple-600/80 backdrop-blur-sm rounded-xl px-8 py-4 border border-purple-400 relative">
-              <h3 className="text-white font-bold text-lg text-center">Lead Capture</h3>
-              <div className="text-center text-purple-200 text-sm mt-1">
+              <h3 className="text-white font-bold text-sm sm:text-base md:text-lg text-center">Lead Capture</h3>
+              <div className="text-center text-purple-200 text-xs sm:text-sm mt-1">
                 {stats.leads} leads captured
               </div>
             </div>
@@ -378,12 +378,12 @@ const RevenueFlowDiagram: React.FC = () => {
 
           {/* Stage 3: Wetroo Automation */}
           <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 mb-4 border border-gray-700 relative">
-            <h3 className="text-white font-bold text-xl text-center mb-6">Wetroo Automation</h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <h3 className="text-white font-bold text-lg sm:text-xl text-center mb-3 sm:mb-4 md:mb-6">Wetroo Automation</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 xs:gap-3 sm:gap-4">
               {automationTools.map((tool, index) => (
                 <div key={index} className="flex flex-col items-center p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all hover:scale-105 relative">
-                  <tool.icon className={`w-8 h-8 ${tool.color} mb-2 animate-pulse`} />
-                  <span className="text-white text-sm font-medium">{tool.name}</span>
+                  <tool.icon className={`w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${tool.color} mb-1 sm:mb-2 animate-pulse`} />
+                  <span className="text-white text-[10px] xs:text-xs sm:text-sm font-medium">{tool.name}</span>
                   {/* Individual connector lines from each tool */}
                   <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-0.5 h-6 bg-gray-500" />
                 </div>
@@ -401,8 +401,8 @@ const RevenueFlowDiagram: React.FC = () => {
           {/* Stage 4: Auto Qualify Lead */}
           <div className="flex justify-center mb-4">
             <div className="bg-green-600/80 backdrop-blur-sm rounded-xl px-8 py-4 border border-green-400">
-              <h3 className="text-white font-bold text-lg text-center">Auto Qualify Lead</h3>
-              <div className="text-center text-green-200 text-sm mt-1">
+              <h3 className="text-white font-bold text-sm sm:text-base md:text-lg text-center">Auto Qualify Lead</h3>
+              <div className="text-center text-green-200 text-xs sm:text-sm mt-1">
                 {stats.qualified} leads qualified
               </div>
             </div>
@@ -427,11 +427,11 @@ const RevenueFlowDiagram: React.FC = () => {
           {/* Stage 5: Auto Nurture Timeline */}
           <div className="flex justify-center mb-4">
             <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 relative">
-              <h3 className="text-white font-bold text-xl text-center mb-4">Auto Nurture</h3>
-              <div className="flex flex-wrap justify-center gap-4">
+              <h3 className="text-white font-bold text-lg sm:text-xl text-center mb-2 sm:mb-3 md:mb-4">Auto Nurture</h3>
+              <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4">
                 {nurtureDays.map((item, index) => (
-                  <div key={index} className={`px-4 py-2 rounded-lg ${item.active ? 'bg-yellow-600/80 text-white' : 'bg-gray-700/50 text-gray-400'} transition-all relative`}>
-                    <MessageCircle className="w-4 h-4 inline mr-2" />
+                  <div key={index} className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-lg ${item.active ? 'bg-yellow-600/80 text-white' : 'bg-gray-700/50 text-gray-400'} transition-all relative`}>
+                    <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 inline mr-1 sm:mr-2" />
                     {item.day}
                     {/* Individual connector lines */}
                     {index < 3 && (
@@ -469,15 +469,15 @@ const RevenueFlowDiagram: React.FC = () => {
           </div>
 
           {/* Stage 6: Final Results */}
-          <div className="flex flex-col md:flex-row justify-center gap-8">
+          <div className="flex flex-col md:flex-row justify-center gap-4 sm:gap-6 md:gap-8">
             {/* Positive Results */}
             <div className="flex-1 max-w-md">
               <div className="bg-green-600/80 backdrop-blur-sm rounded-xl p-6 border border-green-400 text-center relative">
-                <CheckCircle className="w-12 h-12 text-white mx-auto mb-4" />
-                <h4 className="text-white font-bold text-lg mb-2">Positive</h4>
+                <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white mx-auto mb-2 sm:mb-3 md:mb-4" />
+                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Positive</h4>
                 <div className="text-green-200">
-                  <div className="text-2xl font-bold">{stats.positive}</div>
-                  <div className="text-sm">Interested Leads</div>
+                  <div className="text-xl sm:text-2xl font-bold">{stats.positive}</div>
+                  <div className="text-xs sm:text-sm">Interested Leads</div>
                 </div>
                 
                 {/* Pipeline to Lead Won */}
@@ -488,9 +488,9 @@ const RevenueFlowDiagram: React.FC = () => {
                 </div>
                 
                 <div className="mt-4 p-3 bg-green-500/60 rounded-lg">
-                  <TrendingUp className="w-6 h-6 text-white mx-auto mb-2" />
-                  <div className="text-white font-bold">Lead Won</div>
-                  <div className="text-green-100 text-xl font-bold">{stats.won}</div>
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white mx-auto mb-1 sm:mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm md:text-base">Lead Won</div>
+                  <div className="text-green-100 text-lg sm:text-xl font-bold">{stats.won}</div>
                 </div>
               </div>
             </div>
@@ -498,11 +498,11 @@ const RevenueFlowDiagram: React.FC = () => {
             {/* Negative Results */}
             <div className="flex-1 max-w-md">
               <div className="bg-red-600/80 backdrop-blur-sm rounded-xl p-6 border border-red-400 text-center relative">
-                <X className="w-12 h-12 text-white mx-auto mb-4" />
-                <h4 className="text-white font-bold text-lg mb-2">Negative</h4>
+                <X className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white mx-auto mb-2 sm:mb-3 md:mb-4" />
+                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Negative</h4>
                 <div className="text-red-200">
-                  <div className="text-2xl font-bold">{stats.negative}</div>
-                  <div className="text-sm">Not Interested</div>
+                  <div className="text-xl sm:text-2xl font-bold">{stats.negative}</div>
+                  <div className="text-xs sm:text-sm">Not Interested</div>
                 </div>
                 
                 {/* Pipeline to Long Nurture */}
@@ -513,9 +513,9 @@ const RevenueFlowDiagram: React.FC = () => {
                 </div>
                 
                 <div className="mt-4 p-3 bg-red-500/60 rounded-lg">
-                  <MessageCircle className="w-6 h-6 text-white mx-auto mb-2" />
-                  <div className="text-white font-bold">Long Nurture</div>
-                  <div className="text-red-100 text-sm">Extended Follow-up</div>
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white mx-auto mb-1 sm:mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm md:text-base">Long Nurture</div>
+                  <div className="text-red-100 text-xs sm:text-sm">Extended Follow-up</div>
                 </div>
               </div>
             </div>

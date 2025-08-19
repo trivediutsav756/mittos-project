@@ -70,13 +70,13 @@ const MarqueeSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#EBFFF1] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+    <section className="py-8 sm:py-12 md:py-16 bg-[#EBFFF1] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center mb-6 sm:mb-8 md:mb-12">
         <motion.h2 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+          className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4"
         >
           Founders & Marketers <span className="text-red-500">Love</span> us
         </motion.h2>
@@ -85,14 +85,14 @@ const MarqueeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-lg text-gray-600"
+          className="text-sm sm:text-base md:text-lg text-gray-600"
         >
           Trusted by 50,000+ Businesses across 20+ Countries
         </motion.p>
       </div>
 
       {/* First Row - Moving Right */}
-      <div className="relative mb-8">
+      <div className="relative mb-4 sm:mb-6 md:mb-8">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{
@@ -100,15 +100,15 @@ const MarqueeSection = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="flex gap-8 whitespace-nowrap"
+          className="flex gap-3 sm:gap-5 md:gap-8 whitespace-nowrap"
         >
           {duplicatedCompanies.slice(0, 6).map((company, index) => (
             <motion.div
               key={`row1-${index}`}
               whileHover={{ scale: 1.1 }}
-              className={`flex bg-white border-2 ${borderColors[index % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+              className={`flex bg-white border-2 ${borderColors[index % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
             >
-              <div className="h-24 w-full ">
+              <div className="h-16 xs:h-20 sm:h-24 w-full ">
                 {/* <span className="text-gray-700 font-semibold text-lg"> */}
                   <img src={company.logo} alt="" className='w-full h-full object-contain' />
                 {/* </span> */}
@@ -119,9 +119,9 @@ const MarqueeSection = () => {
             <motion.div
               key={`row1-${index}`}
               whileHover={{ scale: 1.1 }}
-              className={`flex bg-white border-2 ${borderColors[index % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+              className={`flex bg-white border-2 ${borderColors[index % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
             >
-              <div className="h-24 w-full ">
+              <div className="h-16 xs:h-20 sm:h-24 w-full ">
                 {/* <span className="text-gray-700 font-semibold text-lg"> */}
                   <img src={company.logo} alt="" className='w-full h-full object-contain' />
                 {/* </span> */}
@@ -132,7 +132,7 @@ const MarqueeSection = () => {
       </div>
 
       {/* Second Row - Moving Left */}
-      <div className="relative mb-8">
+      <div className="relative mb-4 sm:mb-6 md:mb-8">
         <motion.div
           animate={{ x: ["-50%", "0%"] }}
           transition={{
@@ -140,15 +140,15 @@ const MarqueeSection = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="flex gap-8 whitespace-nowrap"
+          className="flex gap-3 sm:gap-5 md:gap-8 whitespace-nowrap"
         >
           {duplicatedCompanies.slice(6,12).map((company, index) => (
             <motion.div
             key={`row1-${index}`}
             whileHover={{ scale: 1.1 }}
-            className={`flex bg-white border-2 ${borderColors[(index+6) % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+            className={`flex bg-white border-2 ${borderColors[(index+6) % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
           >
-            <div className="h-24 w-full ">
+            <div className="h-16 xs:h-20 sm:h-24 w-full ">
               {/* <span className="text-gray-700 font-semibold text-lg"> */}
                 <img src={company.logo} alt="" className='w-full h-full object-contain' />
               {/* </span> */}
@@ -159,9 +159,9 @@ const MarqueeSection = () => {
            <motion.div
            key={`row1-${index}`}
            whileHover={{ scale: 1.1 }}
-           className={`flex bg-white border-2 ${borderColors[(index+6) % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+           className={`flex bg-white border-2 ${borderColors[(index+6) % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
          >
-           <div className="h-24 w-full ">
+           <div className="h-16 xs:h-20 sm:h-24 w-full ">
              {/* <span className="text-gray-700 font-semibold text-lg"> */}
                <img src={company.logo} alt="" className='w-full h-full object-contain' />
              {/* </span> */}
@@ -180,15 +180,15 @@ const MarqueeSection = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="flex gap-8 whitespace-nowrap"
+          className="flex gap-3 sm:gap-5 md:gap-8 whitespace-nowrap"
         >
             {duplicatedCompanies.slice(13,18).map((company, index) => (
              <motion.div
              key={`row1-${index}`}
              whileHover={{ scale: 1.1 }}
-             className={`flex bg-white border-2 ${borderColors[(index+13) % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+             className={`flex bg-white border-2 ${borderColors[(index+13) % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
            >
-             <div className="h-24 w-full ">
+             <div className="h-16 xs:h-20 sm:h-24 w-full ">
                {/* <span className="text-gray-700 font-semibold text-lg"> */}
                  <img src={company.logo} alt="" className='w-full h-full object-contain' />
                {/* </span> */}
@@ -199,9 +199,9 @@ const MarqueeSection = () => {
              <motion.div
              key={`row1-${index}`}
              whileHover={{ scale: 1.1 }}
-             className={`flex bg-white border-2 ${borderColors[(index+13) % borderColors.length]} rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[200px]`}
+             className={`flex bg-white border-2 ${borderColors[(index+13) % borderColors.length]} rounded-md sm:rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 min-w-[120px] xs:min-w-[150px] sm:min-w-[180px] md:min-w-[200px]`}
            >
-             <div className="h-24 w-full ">
+             <div className="h-16 xs:h-20 sm:h-24 w-full ">
                {/* <span className="text-gray-700 font-semibold text-lg"> */}
                  <img src={company.logo} alt="" className='w-full h-full object-contain' />
                {/* </span> */}

@@ -58,18 +58,18 @@ const WhatsAppBulkMessages: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="border border-purple-300 p-8 rounded-xl shadow-lg w-full max-w-[1920px] mx-auto bg-gradient-to-br from-green-50 to-green-100"
+      className="border border-purple-300 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg w-full max-w-[1920px] mx-auto bg-gradient-to-br from-green-50 to-green-100"
     >
       {/* Title */}
       <motion.h1
         variants={itemVariants}
-        className="text-3xl font-bold text-center leading-snug text-gray-900"
+        className="text-xl sm:text-2xl md:text-3xl font-bold text-center leading-snug text-gray-900"
       >
         Send Unlimited WhatsApp Bulk Messages <br /> Just in Single Click
       </motion.h1>
 
       {/* Features */}
-      <div className="mt-8 space-y-6">
+      <div className="mt-4 sm:mt-6 md:mt-8 space-y-3 sm:space-y-4 md:space-y-6">
         {features.map((item, idx) => (
           <motion.div
             key={idx}
@@ -78,17 +78,19 @@ const WhatsAppBulkMessages: React.FC = () => {
             transition={{ duration: 0.2 }}
             className="flex items-start"
           >
-            <div className="mr-3">{item.icon}</div>
+            <div className="mr-2 sm:mr-3">
+              <div className="text-xl sm:text-2xl md:text-[28px]">{item.icon}</div>
+            </div>
             <div>
-              <h2 className="text-xl font-bold">{item.title}</h2>
-              <p className="text-gray-700">{item.desc}</p>
+              <h2 className="text-base sm:text-lg md:text-xl font-bold">{item.title}</h2>
+              <p className="text-xs sm:text-sm md:text-base text-gray-700">{item.desc}</p>
             </div>
           </motion.div>
         ))}
       </div>
 
       {/* Buttons */}
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className="mt-4 sm:mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
         {buttons.map((text, index) => (
           <motion.button
             key={index}
@@ -99,10 +101,10 @@ const WhatsAppBulkMessages: React.FC = () => {
             }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.15 }}
-            className="flex items-center border border-green-500 px-4 py-2 rounded-lg text-base bg-white hover:bg-[#22C55E] hover:text-white transition w-full justify-start shadow-sm"
-            style={{ height: "50px" }}
+            className="flex items-center border border-green-500 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm md:text-base bg-white hover:bg-[#22C55E] hover:text-white transition w-full justify-start shadow-sm"
+            style={{ height: "40px", minHeight: "40px", maxHeight: "50px" }}
           >
-            <FaUser className="mr-2" />
+            <FaUser className="mr-1 sm:mr-2 text-xs sm:text-sm md:text-base" />
             <span className="font-medium">{text}</span>
           </motion.button>
         ))}

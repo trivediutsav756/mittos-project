@@ -13,32 +13,42 @@ interface PricingPlan {
   period: string;
   logo?: string;
   features: FeatureItem[];
-  unlimited?: string[];
   color: string;
   textColor: string;
   hasMoneyBackGuarantee?: boolean;
 }
 
 const PabblyComparisonSection: React.FC = () => {
-  // Animation variants
+  // Stronger container animation (harder + smoother)
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 90 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
+        type: "spring",
+        stiffness: 70,
+        damping: 16,
+        staggerChildren: 0.15
       }
     }
   };
 
+  // Child animation
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    hidden: { opacity: 0, y: 40, scale: 0.92 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 90,
+        damping: 18
+      }
+    }
   };
 
-  // Pricing plans data
   const pricingPlans: PricingPlan[] = [
     {
       name: 'Zapier',
@@ -56,7 +66,7 @@ const PabblyComparisonSection: React.FC = () => {
         { text: 'Formatters', available: true },
         { text: 'Filters', available: true },
         { text: 'Path Routers', available: true },
-        { text: 'Unlimited Team Members', available: false },
+        { text: 'Unlimited Team Members', available: false }
       ]
     },
     {
@@ -78,97 +88,71 @@ const PabblyComparisonSection: React.FC = () => {
         { text: 'Unlimited Path Routers', available: true },
         { text: 'Unlimited Operations', available: true },
         { text: 'Unlimited Team Members', available: true },
-        { text: 'Unlimited Connections', available: true },
+        { text: 'Unlimited Connections', available: true }
       ]
     }
   ];
 
   return (
-    <section className="w-full bg-purple-100 py-16 px-4 overflow-hidden">
-      <motion.div 
-        className="max-w-6xl mx-auto"
-        variants={containerVariants}
+    <section className="w-full bg-purple-100 py-6 sm:py-10 md:py-12 lg:py-16 px-2">
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="max-w-6xl mx-auto"
       >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Pabbly Connect: <span className="underline decoration-yellow-400 decoration-4">What Makes Us Different?</span>👇
+        <motion.div variants={itemVariants} className="text-center mb-10">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            Pabbly Connect: <span className="underline decoration-yellow-400 decoration-2 sm:decoration-4">What Makes Us Different?</span>👇
           </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto">
-            We are the only automation platform that offers unlimited internal tasks. You will consume ZERO
-            tasks when using internal operations such as Filter, Router, Formatter etc.
+          <p className="text-gray-700 max-w-3xl mx-auto text-xs sm:text-sm md:text-base mt-2">
+            We are the only automation platform that offers unlimited internal tasks. You will consume ZERO tasks when using internal operations such as Filter, Router, Formatter etc.
           </p>
-        </div>
+        </motion.div>
 
+        {/* Pricing Cards */}
         <div className="relative flex justify-center">
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl relative">
-            {pricingPlans.map((plan, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 w-full max-w-4xl">
+            {pricingPlans.map((plan) => (
               <motion.div
                 key={plan.name}
-                className={`${plan.color} border border-gray-200 rounded-lg shadow-lg overflow-hidden relative`}
                 variants={itemVariants}
+                className={`${plan.color} rounded-lg border border-gray-200 shadow-lg overflow-hidden`}
               >
                 {/* Money Back Badge */}
                 {plan.hasMoneyBackGuarantee && (
-                  <div className="absolute top-0 right-0 -mt-2 -mr-2 z-10">
-                    <div className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
-                      <div className="text-center">30 Days Money</div>
-                      <div className="text-center">Back Guarantee</div>
+                  <div className="absolute top-0 right-0 translate-x-2 -translate-y-2">
+                    <div className="bg-blue-500 text-white px-2 py-1 rounded-full text-[8px] sm:text-[10px] md:text-xs rotate-12">
+                      30 Days Money Back
                     </div>
                   </div>
                 )}
 
-                {/* Plan Header */}
-                <div className="p-6 flex items-center justify-between border-b border-gray-200">
-                  <div className="flex items-center space-x-3">
-                    {plan.logo === 'zapier' ? (
-                      <div className="w-10 h-10 flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-                          <path d="M22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12Z" fill="#FF4A00"/>
-                          <path d="M16.4531 7.0293H12.4414L8.42969 11.041H12.4414L16.4531 7.0293Z" fill="white"/>
-                          <path d="M7.54688 7.0293L7.54688 11.041L11.5586 15.0527V11.041L7.54688 7.0293Z" fill="white"/>
-                          <path d="M12.4414 15.9355H16.4531L16.4531 11.9238L12.4414 15.9355Z" fill="white"/>
-                        </svg>
-                      </div>
-                    ) : (
-                      <div className="w-10 h-10 flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-                          <circle cx="12" cy="12" r="10.5" fill="#00C389"/>
-                          <path d="M12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6ZM12 16.2C9.67906 16.2 7.8 14.3209 7.8 12C7.8 9.67906 9.67906 7.8 12 7.8C14.3209 7.8 16.2 9.67906 16.2 12C16.2 14.3209 14.3209 16.2 12 16.2Z" fill="white"/>
-                        </svg>
-                      </div>
-                    )}
+                {/* Header */}
+                <div className="p-4 flex items-center justify-between border-b border-gray-200">
+                  <div className="flex items-center gap-2">
                     <span className={`font-bold ${plan.textColor}`}>{plan.name}</span>
                   </div>
+                  <div className="text-gray-600 text-xs">{plan.period}</div>
                 </div>
 
                 {/* Price */}
-                <div className="p-6 border-b border-gray-200">
-                  <div className="flex items-baseline">
-                    <span className="text-3xl font-bold">{plan.currency}</span>
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                  </div>
-                  <div className="text-sm text-gray-500">{plan.period}</div>
+                <div className="p-4 border-b border-gray-200">
+                  <span className="text-lg md:text-2xl font-bold">{plan.currency}{plan.price}</span>
                 </div>
 
                 {/* Features */}
-                <div className="p-6">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-2">
+                <div className="p-4">
+                  <ul className="space-y-2 text-xs sm:text-sm">
+                    {plan.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-2">
                         {feature.available ? (
-                          <svg className="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
+                          <span className="text-green-500">✔</span>
                         ) : (
-                          <svg className="w-5 h-5 text-red-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                          </svg>
+                          <span className="text-red-500">✖</span>
                         )}
-                        <span className={feature.available ? 'text-gray-800' : 'text-gray-500 line-through'}>
+                        <span className={`${!feature.available && 'line-through text-gray-400'}`}>
                           {feature.text}
                         </span>
                       </li>
@@ -178,50 +162,41 @@ const PabblyComparisonSection: React.FC = () => {
               </motion.div>
             ))}
 
-            {/* VS Badge */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                VS
-              </div>
-            </div>
+            {/* VS Circle */}
+            <motion.div
+              variants={itemVariants}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl"
+            >
+              VS
+            </motion.div>
           </div>
         </div>
 
         {/* CTA Button */}
-        <motion.div 
-          className="mt-12 text-center"
-          variants={itemVariants}
-        >
-          <a 
-            href="#" 
-            className="inline-flex items-center px-8 py-3 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition-colors"
+        <motion.div variants={itemVariants} className="text-center mt-10">
+          <a
+            href="#"
+            className="inline-block px-6 sm:px-8 md:px-10 py-2 sm:py-3 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-all duration-300"
           >
-            <span className="mr-2">👍</span>
             START NOW — IT'S FREE!
           </a>
         </motion.div>
 
         {/* Trust Badges */}
-        <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-gray-600">
+        <motion.div
+          variants={itemVariants}
+          className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 text-xs sm:text-sm text-gray-600"
+        >
           <div className="flex items-center">
-            <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            Trusted by 14,099+ Businesses
+            ✔ Trusted by 14,099+ Businesses
           </div>
           <div className="flex items-center">
-            <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            30-Days Refund Guarantee
+            ✔ 30-Days Refund Guarantee
           </div>
           <div className="flex items-center">
-            <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            11,000+ Video Tutorials
+            ✔ 11,000+ Video Tutorials
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -48,9 +48,9 @@ const CtwaSection: React.FC = () => {
     visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
   };
   return (
-    <section className="w-full bg-[#E8F6EB] py-16 px-4 md:px-8">
+    <section className="w-full bg-[#E8F6EB] py-6 sm:py-8 md:py-12 lg:py-16 px-2 sm:px-4 md:px-6 lg:px-8">
       <motion.div 
-        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8"
+        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -63,7 +63,7 @@ const CtwaSection: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn}>
           <motion.h2 
-            className="text-3xl md:text-5xl font-bold leading-tight mb-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4"
             variants={textAnimation}
           >
             Skyrocket Lead Gen <br />
@@ -71,7 +71,7 @@ const CtwaSection: React.FC = () => {
             WhatsApp Ads ( CTWA )
           </motion.h2>
           <motion.p 
-            className="text-base md:text-lg leading-relaxed"
+            className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
             variants={textAnimation}
           >
             Never miss leads, even without numbers! Engage customers directly on
@@ -80,19 +80,19 @@ const CtwaSection: React.FC = () => {
           </motion.p>
 
           <motion.h3 
-            className="text-2xl md:text-3xl font-semibold mt-10 mb-6"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mt-4 sm:mt-6 md:mt-8 lg:mt-10 mb-2 sm:mb-3 md:mb-4 lg:mb-6"
             variants={textAnimation}
           >
             Isko Gif Banakar Daaliye
           </motion.h3>
           
           <motion.button
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 sm:py-2 md:py-2.5 lg:py-3 px-3 sm:px-4 md:px-5 lg:px-6 rounded-full shadow-lg flex items-center text-xs sm:text-sm md:text-base"
             variants={textAnimation}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 mr-1 sm:mr-1.5 md:mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
             </svg>
             Start WhatsApp Marketing
@@ -101,7 +101,7 @@ const CtwaSection: React.FC = () => {
 
         {/* Right Image Section */}
         <motion.div 
-          className="w-full md:w-1/2 flex justify-center md:justify-end"
+          className="w-full md:w-1/2 flex justify-center md:justify-end mt-4 sm:mt-3 md:mt-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -111,7 +111,7 @@ const CtwaSection: React.FC = () => {
           <motion.img
             src={ctwaImage}
             alt="CTWA Demo"
-            className="w-full max-w-[500px] rounded-lg shadow-lg"
+            className="w-full max-w-[250px] xs:max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] rounded-lg shadow-lg"
             variants={imageAnimation}
             whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             animate={pulseAnimation.animate}

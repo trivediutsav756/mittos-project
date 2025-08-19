@@ -101,15 +101,15 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full px-4 py-16 bg-gray-200" ref={ref}>
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+    <section className="w-full px-2 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16 bg-gray-200" ref={ref}>
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 text-gray-800">
         {heading}
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
         {/* Before */}
         <div>
-          <h3 className="text-xl font-semibold text-red-600 mb-6 text-center">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-red-600 mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-center">
             ❌ {beforeTitle}
           </h3>
           {data.map((item, idx) => (
@@ -120,17 +120,17 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
               animate={isInView ? "visible" : "hidden"}
               variants={itemVariant}
               whileHover={{ scale: 1.02 }}
-              className="bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,_-8px_-8px_16px_#ffffff] border border-red-400 rounded-xl p-4 mb-4 flex gap-3 transition-all duration-300"
+              className="bg-[#e0e0e0] shadow-[2px_2px_4px_#bebebe,_-2px_-2px_4px_#ffffff] sm:shadow-[4px_4px_8px_#bebebe,_-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#bebebe,_-8px_-8px_16px_#ffffff] border border-red-400 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex gap-1.5 sm:gap-2 md:gap-3 transition-all duration-300"
             >
-              <XCircle className="text-red-500 mt-1" size={20} />
-              <p className="text-gray-700">{item.before}</p>
+              <XCircle className="text-red-500 mt-0.5 sm:mt-1 flex-shrink-0 w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] lg:w-[20px] lg:h-[20px]" />
+              <p className="text-gray-700 text-[10px] xs:text-xs sm:text-sm md:text-base">{item.before}</p>
             </motion.div>
           ))}
         </div>
 
         {/* After */}
         <div>
-          <h3 className="text-xl font-semibold text-green-600 mb-6 text-center">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-green-600 mb-2 sm:mb-3 md:mb-4 lg:mb-6 text-center">
             ✅ {afterTitle}
           </h3>
           {data.map((item, idx) => (
@@ -141,10 +141,10 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({
               animate={isInView ? "visible" : "hidden"}
               variants={itemVariant}
               whileHover={{ scale: 1.02 }}
-              className="bg-[#e0e0e0] shadow-[8px_8px_16px_#bebebe,_-8px_-8px_16px_#ffffff] border border-green-400 rounded-xl p-4 mb-4 flex gap-3 transition-all duration-300"
+              className="bg-[#e0e0e0] shadow-[2px_2px_4px_#bebebe,_-2px_-2px_4px_#ffffff] sm:shadow-[4px_4px_8px_#bebebe,_-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#bebebe,_-8px_-8px_16px_#ffffff] border border-green-400 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 mb-2 sm:mb-3 md:mb-4 flex gap-1.5 sm:gap-2 md:gap-3 transition-all duration-300"
             >
-              <CheckCircle className="text-green-500 mt-1" size={20} />
-              <p className="text-gray-800">{item.after}</p>
+              <CheckCircle className="text-green-500 mt-0.5 sm:mt-1 flex-shrink-0 w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] lg:w-[20px] lg:h-[20px]" />
+              <p className="text-gray-800 text-[10px] xs:text-xs sm:text-sm md:text-base">{item.after}</p>
             </motion.div>
           ))}
         </div>

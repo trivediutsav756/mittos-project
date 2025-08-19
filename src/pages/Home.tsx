@@ -16,7 +16,8 @@ import AutomationSection from '../components/AutomationSection';
 import PabblyComparisonSection from '../components/PabblyComparisonSection';
 import SalesDashboard from '../components/SalesDashboard';
 import LeadSources from '../components/LeadSources';
-
+import TrustSection from '../components/TrustSection';
+import SecuritySection from '../components/SecuritySection';
 
 
 const Home = () => {
@@ -33,17 +34,18 @@ const Home = () => {
       {/* <RevenueFlowDiagram /> */}
       {/* <RevenueFunnel /> */}
       <RevenueSection />
-      <WhatsAppBulkMessages />;
-      <WhatsAppChatbotBuilder/>;
-      <WhatsAppForms/>;
+      <WhatsAppBulkMessages />
+      <WhatsAppChatbotBuilder/>
+      <WhatsAppForms/>
       <DripCampaignSection />
       <CtwaSection />
-     <SalesDashboard /> 
-     <LeadSources /> 
+      <SalesDashboard />
+      <LeadSources />
       <AutomationSection />
       <PabblyComparisonSection />
-      
-      
+      <TrustSection />
+      <SecuritySection />
+     
     </main>
   );
 };
